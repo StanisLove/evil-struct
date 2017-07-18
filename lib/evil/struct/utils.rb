@@ -61,7 +61,8 @@ module Evil::Struct::Utils
   private
 
   def to_h(value)
-    to_hash(value)&.each_with_object({}) do |(key, val), obj|
+    return unless to_hash(value)
+    to_hash(value).each_with_object({}) do |(key, val), obj|
       obj[key.to_sym] = val
     end
   end

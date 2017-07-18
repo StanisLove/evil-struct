@@ -93,7 +93,7 @@ class Evil::Struct
   # @return [Boolean]
   #
   def ==(other)
-    if other&.respond_to?(:to_h)
+    if other && other.respond_to?(:to_h)
       to_h == other.to_h
     elsif other.respond_to?(:to_hash)
       to_h == other.to_hash
